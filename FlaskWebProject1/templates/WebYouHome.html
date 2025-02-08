@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            background-color: #0F0F0F;
+            color: white;
+        }
+
+        main {
+            margin-left: 200px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            overflow-x: hidden;
+            padding-top: 60px;
+        }
+
+            .sidenav a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #D53302;
+                display: block;
+            }
+
+                .sidenav a:hover {
+                    color: #f1f1f1;
+                }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+                .sidenav a {
+                    font-size: 18px;
+                }
+        }
+
+
+
+        #main {
+            display: flex;
+            padding: 16px;
+            position: sticky;
+            top: 0px;
+            background-color: rgb(15,15,15);
+        }
+
+        #logo {
+            font-size: 30px;
+            color: #D53302;
+            width: 250px;
+        }
+
+        .topnav {
+            justify-content: center;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .vid {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .chanelNam {
+            color: white;
+            margin-left: 1vw;
+            margin-right: 2vw;
+        }
+
+        #logo,
+        .top {
+            flex: 1;
+        }
+
+        .top {
+            margin-top: 10px;
+        }
+
+
+        .vertical-menu {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .dop {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        #sublogo {
+            border-radius: 50%;
+        }
+
+        #sub {
+            background: white;
+            border-radius: 10px;
+            margin-right: 1vw;
+            padding: 10px 15px;
+            color: black;
+        }
+
+        
+
+
+        .vertical-menu a {
+            color: black;
+            padding: 12px;
+            text-decoration: none;
+        }
+
+
+            .vertical-menu a.active {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+        #vision {
+            display: flex;
+            justify-content: flex-start;
+            margin-left: 1vw;
+            margin-top: 40px;
+        }
+
+        #mySidenav {
+            width: 250px;
+        }
+
+        #tt {
+            display: flex;
+            justify-content: flex-start;
+            position: absolute;
+            top: 0;
+            margin-left: 7px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #sublogo {
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .video-card {
+            width: 340px;
+            height: 290px;
+            margin: 10px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .video-title {
+            font-size: 16px;
+            color: white;
+            text-decoration: none;
+            margin-block-start: 0;
+            margin-left: 2px;
+        }
+        #prevyou {
+            border-radius: 10px;
+        }
+
+        #sublogo {
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .opis {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .act {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ip {
+            color: #AAAAAA;
+            text-decoration: none;
+            font-size: 12px;
+            margin-left: 2px;
+        }
+
+        input[type="text"] {
+            border: 1.7px solid #cccccc;
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -khtml-border-radius: 3px;
+            background: black !important;
+            outline: white;
+            color: white;
+            font-family: Tahoma;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <title>WebYou - </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://unpkg.com/plyr@3/dist/plyr.css'>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+
+    <div id="mySidenav" class="sidenav">
+        <img id="tt" src="/static/pic/WebyouLogo.svg" height="50" width="auto">
+        <div id="vision">
+            <img src="/static/pic/iconHome.svg">
+            <a href="{{ url_for('home') }}">Home</a>
+        </div>
+
+    </div>
+
+    <header id="main">
+        <span id="logo">
+        </span>
+        <div class="topnav">
+            <input type="text" placeholder="Search..">
+
+        </div>
+        <div class="top">
+            <img src="/static/pic/icon.svg"height="25" width="25">
+        </div>
+        <div id="sublogo">
+            <img id="youlogo" src="sublogo.jpg" height="40" width="40">
+        </div>
+    </header>
+    <main>
+        <div class="main-content">
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">{{ nameChanel }}</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">{{ nameChanel }}</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('about') }}">
+                <div class="video-card">
+                    <img id="prevyou" src="/static/Previu/ost.jpg" width="100%" height="70%" alt="Thumbnail 1">
+                    <div class="opis">
+                        <img id="sublogo" src="sublogo.jpg" height="40" width="40">
+                        <div class="act">
+                            <p class="video-title">{{ nameVideo }}</p>
+                            <p class="ip">Video Title 1</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+        </div>
+    </main>
+
+</body>
+
+</html>

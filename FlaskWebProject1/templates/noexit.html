@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        .yow {
+            display: flex;
+            flex-direction: column;
+            width: auto;
+            border: 1.4px solid white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            box-shadow: 0 0 2vw rgb(128, 128, 128, 0.7);
+        }
+
+        @property --pos-x {
+            syntax: '<percentage>';
+            initial-value: 11.14%;
+            inherits: false;
+        }
+
+        @property --pos-y {
+            syntax: '<percentage>';
+            initial-value: 140%;
+            inherits: false;
+        }
+
+        @property --spread-x {
+            syntax: '<percentage>';
+            initial-value: 150%;
+            inherits: false;
+        }
+
+        @property --spread-y {
+            syntax: '<percentage>';
+            initial-value: 180.06%;
+            inherits: false;
+        }
+
+        @property --color-1 {
+            syntax: '<color>';
+            initial-value: #000;
+            inherits: false;
+        }
+
+        @property --color-2 {
+            syntax: '<color>';
+            initial-value: #08012C;
+            inherits: false;
+        }
+
+        @property --color-3 {
+            syntax: '<color>';
+            initial-value: #4E1E40;
+            inherits: false;
+        }
+
+        @property --color-4 {
+            syntax: '<color>';
+            initial-value: #70464E;
+            inherits: false;
+        }
+
+        @property --color-5 {
+            syntax: '<color>';
+            initial-value: #88394C;
+            inherits: false;
+        }
+
+        @property --stop-1 {
+            syntax: '<percentage>';
+            initial-value: 37.35%;
+            inherits: false;
+        }
+
+        @property --stop-2 {
+            syntax: '<percentage>';
+            initial-value: 61.36%;
+            inherits: false;
+        }
+
+        @property --stop-3 {
+            syntax: '<percentage>';
+            initial-value: 78.42%;
+            inherits: false;
+        }
+
+        @property --stop-4 {
+            syntax: '<percentage>';
+            initial-value: 89.52%;
+            inherits: false;
+        }
+
+        @property --stop-5 {
+            syntax: '<percentage>';
+            initial-value: 100%;
+            inherits: false;
+        }
+
+        #button {
+            border-radius: 11px;
+            border: none;
+            padding: 16px 32px;
+            min-width: 120px;
+            font-size: 16px;
+            line-height: 1;
+            font-weight: 500;
+            font-family: inherit;
+            color: white;
+            position: relative;
+            cursor: pointer;
+            appearance: none;
+            background: radial-gradient( var(--spread-x) var(--spread-y) at var(--pos-x) var(--pos-y), var(--color-1) var(--stop-1), var(--color-2) var(--stop-2), var(--color-3) var(--stop-3), var(--color-4) var(--stop-4), var(--color-5) var(--stop-5) );
+            text-shadow: 0 .5px 1px rgba(0, 0, 0, .75);
+            box-shadow: 0 0 0 1px inset rgba(255, 255, 255, 0.1);
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+            transition: --pos-x 0.5s, --pos-y 0.5s, --spread-x 0.5s, --spread-y 0.5s, --color-1 0.5s, --color-2 0.5s, --color-3 0.5s, --color-4 0.5s, --color-5 0.5s, --stop-1 0.5s, --stop-2 0.5s, --stop-3 0.5s, --stop-4 0.5s, --stop-5 0.5s;
+        }
+
+        #Ki {
+            margin-top: 3vw;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        body {
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: grid;
+            place-items: center;
+            background: black;
+            font-family: "Instrument Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
+            color: white;
+        }
+
+        #logo {
+            cursor: pointer;
+        }
+
+        input[type="text"] {
+            border: 1px solid #cccccc;
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -khtml-border-radius: 3px;
+            background: black !important;
+            outline: white;
+            color: white;
+            font-family: Tahoma;
+        }
+
+        input[type="email"] {
+            border: 1px solid #cccccc;
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -khtml-border-radius: 3px;
+            background: black !important;
+            outline: white;
+            color: white;
+            font-family: Tahoma;
+        }
+
+        input[type="password"] {
+            border: 1px solid #cccccc;
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -khtml-border-radius: 3px;
+            background: black !important;
+            outline: white;
+            color: white;
+            font-family: Tahoma;
+        }
+    </style>
+</head>
+    <body>
+            <div class="yow">
+                <span id="logo">
+                    <img src="/static/pic/WebyouLogo.svg" height="50" width="250">
+                </span>
+                <div id="Ki">
+                    <div class="col-md-12">
+                        <h2>Вход</h2>
+                        <p>Введите свою почту и пароль.</p>
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <label>Электронная почта</label>
+                                <input type="email" name="email" class="form-control" placeholder="email" required />
+                            </div>
+                            <div class="form-group">
+                                <label>Пароль</label>
+                                <input type="password" name="password" class="form-control" placeholder="password" required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="submit" class="btn btn-primary" id="button" value="Войти">
+                            </div>
+                            <p>Нет аккаунта? <a href="{{ url_for('Registr') }}">Создайте его за пару минут</a>.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>
