@@ -190,17 +190,7 @@ def index():
 
         return redirect("home", 301)
     return render_template('layout.html')
-@app.route('/home', methods=['GET', 'POST'])
+@app.route('/home')
 def homeindex():
-    conn = cuncon()[1]
-    if request.method == "POST":
-        file = request.files['file']
-        print("yes")
-        if file and file.filename.endswith('.csv'):
-            print("yes")
-            int1 = NoteTrans(file.filename)
-            print(int1)
+    return render_template('about.html')
 
-
-        return redirect("home", 301)
-    return render_template('layout.html')
