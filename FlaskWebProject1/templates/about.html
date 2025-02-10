@@ -1,10 +1,80 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheet music in audio</title>
+    <style>
+        body {
+            background-color: black;
+        }
 
-{% block content %}
+        .cen {
+            display: flex;
+            justify-content: center;
+        }
 
-<h2>{{ title }}.</h2>
-<h3>{{ message }}</h3>
+        #q {
+            background-color: white;
+            height: auto;
+            border-radius: 2vw;
+            padding: 20px;
+        }
+        .ok {
+            font-size: 20px;
+        }
+      .op{
+        font-size: 20px;
+        background-color: yellow;
+        border-radius: 5px;
+        cursor: pointer;
+      }
 
-<p>Use this area to provide additional information.</p>
+        #mtext {
+            display: flex;
+            justify-content: center;
+        }
 
-{% endblock %}
+        #logo {
+            width: 5vw;
+            height: 5vw;
+            position: fixed;
+        }
+
+        #logo1 {
+            width: 70vw;
+            height: auto;
+        }
+
+        #button {
+            font-size: 20px;
+            background-color: #4C63F7;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img id="logo" src="/static/pic/Saite.svg">
+    </header>
+    <div class="cen">
+        <div>
+            <div id="mtext">
+                <img id="logo1" src="/static/pic/Sait.svg">
+            </div>
+                <div id="mtext">
+                    <div id="q">
+                        <h1>Sheet music in audio (˶ᵔ ᵕ ᵔ˶)<br/>Ноты в аудио</h1>
+                        <audio src="/static/Mp3/CC.mp3" controls></audio>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
